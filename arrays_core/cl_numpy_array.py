@@ -1,9 +1,10 @@
 import numpy as np
 import doctest
+from typing import Union
 
 
 class Array:
-    def __init__(self, y_axis: int = 1, x_axis: int = 1, filler: int = 1, pair_arg=None):
+    def __init__(self, y_axis: int = 1, x_axis: int = 1, filler: int = 1, pair_arg: Union[list, tuple, None] = None):
         """
         Creating and preparing the Array class for work
         :param y_axis: define depth of y-coordinate array
@@ -59,10 +60,14 @@ class Array:
 
     def filled_with_numbers(self):
         """
-        :return: return multidimensional array filled with any self.filler amounts
+        :return: return multidimensional array filled with any self[.]filler amounts
         """
         numbers_array = np.full((self.y_axis, self.x_axis), self.filler, dtype=int)
         return f'{numbers_array}\nAxis Y: {self.y_axis}, Axis X:{self.x_axis}'
 
 
 doctest.testmod()
+
+x = Array(filler=5, pair_arg=(6, 3)).filled_with_numbers()
+print(x)
+
