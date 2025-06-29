@@ -1,10 +1,11 @@
 import numpy as np
 import doctest
 from typing import Union
+from typing import Tuple
 
 
 class Array:
-    def __init__(self, y_axis: int = 1, x_axis: int = 1, filler: int = 1, pair_arg: Union[list, tuple, None] = None):
+    def __init__(self, y_axis: int = 1, x_axis: int = 1, filler: int = 1, pair_arg: Union[list[int, float], Tuple[int, float], None] = None):
         """
         Creating and preparing the Array class for work
         :param y_axis: define depth of y-coordinate array
